@@ -31,7 +31,7 @@ describe('the local repository', () => {
       chai.assert.isDirectory('./my-repository/.git/logs',  'no commits were found.  Use "git commit -m" followed by a message to create a commit');
     })
 
-    it('has been pushed up to the remote repository', () => {
+    it('has been pushed up to the remote pippi', () => {
       chai.assert.isDirectory('./my-repository/.git/logs',  'no record of pushing to a remote was found. Follow the instructions on GitHub to connect and push to a new remote repository');
     })
 
