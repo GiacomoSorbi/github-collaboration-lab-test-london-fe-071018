@@ -2,12 +2,12 @@
   "stats": {
     "suites": 2,
     "tests": 6,
-    "passes": 5,
+    "passes": 2,
     "pending": 0,
-    "failures": 1,
-    "start": "2018-08-14T16:01:16.029Z",
-    "end": "2018-08-14T16:01:16.050Z",
-    "duration": 21
+    "failures": 4,
+    "start": "2018-08-15T09:45:43.766Z",
+    "end": "2018-08-15T09:45:43.788Z",
+    "duration": 22
   },
   "tests": [
     {
@@ -22,7 +22,12 @@
       "fullTitle": "this lab has a valid git repository initialized for the my-repository folder",
       "duration": 1,
       "currentRetry": 0,
-      "err": {}
+      "err": {
+        "message": "no \".git\" folder was found within \"/my-repository, used \"git init\" to initialize: value: expected './my-repository/.git' to exist",
+        "showDiff": false,
+        "actual": "./my-repository/.git",
+        "stack": "AssertionError: no \".git\" folder was found within \"/my-repository, used \"git init\" to initialize: value: expected './my-repository/.git' to exist\n    at Function.<anonymous> (node_modules/chai-fs/lib/assertions/directory.js:21:53)\n    at Function.ctx.(anonymous function) [as directory] (node_modules/chai/lib/chai/utils/addMethod.js:41:25)\n    at Function.assert.isDirectory (node_modules/chai-fs/lib/assertions/directory.js:34:35)\n    at Context.it (test/index-test.js:15:19)"
+      }
     },
     {
       "title": "has a README.md file in the my-repository folder",
@@ -36,14 +41,24 @@
       "fullTitle": "the local repository has README.md as a tracked file",
       "duration": 0,
       "currentRetry": 0,
-      "err": {}
+      "err": {
+        "message": "no files are being tracked.  Use \"git add .\" to track all files in this repo: expected './my-repository/.git/index' to exist",
+        "showDiff": false,
+        "actual": "./my-repository/.git/index",
+        "stack": "AssertionError: no files are being tracked.  Use \"git add .\" to track all files in this repo: expected './my-repository/.git/index' to exist\n    at Function.assert.pathExists (node_modules/chai-fs/lib/assertions/path.js:31:35)\n    at Context.it (test/index-test.js:27:19)"
+      }
     },
     {
       "title": "has at least one commit",
       "fullTitle": "the local repository has at least one commit",
       "duration": 0,
       "currentRetry": 0,
-      "err": {}
+      "err": {
+        "message": "no commits were found.  Use \"git commit -m\" followed by a message to create a commit: value: expected './my-repository/.git/logs' to exist",
+        "showDiff": false,
+        "actual": "./my-repository/.git/logs",
+        "stack": "AssertionError: no commits were found.  Use \"git commit -m\" followed by a message to create a commit: value: expected './my-repository/.git/logs' to exist\n    at Function.<anonymous> (node_modules/chai-fs/lib/assertions/directory.js:21:53)\n    at Function.ctx.(anonymous function) [as directory] (node_modules/chai/lib/chai/utils/addMethod.js:41:25)\n    at Function.assert.isDirectory (node_modules/chai-fs/lib/assertions/directory.js:34:35)\n    at Context.it (test/index-test.js:31:19)"
+      }
     },
     {
       "title": "has been pushed up to the remote repository",
@@ -60,6 +75,42 @@
   ],
   "pending": [],
   "failures": [
+    {
+      "title": "has a valid git repository initialized for the my-repository folder",
+      "fullTitle": "this lab has a valid git repository initialized for the my-repository folder",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "message": "no \".git\" folder was found within \"/my-repository, used \"git init\" to initialize: value: expected './my-repository/.git' to exist",
+        "showDiff": false,
+        "actual": "./my-repository/.git",
+        "stack": "AssertionError: no \".git\" folder was found within \"/my-repository, used \"git init\" to initialize: value: expected './my-repository/.git' to exist\n    at Function.<anonymous> (node_modules/chai-fs/lib/assertions/directory.js:21:53)\n    at Function.ctx.(anonymous function) [as directory] (node_modules/chai/lib/chai/utils/addMethod.js:41:25)\n    at Function.assert.isDirectory (node_modules/chai-fs/lib/assertions/directory.js:34:35)\n    at Context.it (test/index-test.js:15:19)"
+      }
+    },
+    {
+      "title": "has README.md as a tracked file",
+      "fullTitle": "the local repository has README.md as a tracked file",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "message": "no files are being tracked.  Use \"git add .\" to track all files in this repo: expected './my-repository/.git/index' to exist",
+        "showDiff": false,
+        "actual": "./my-repository/.git/index",
+        "stack": "AssertionError: no files are being tracked.  Use \"git add .\" to track all files in this repo: expected './my-repository/.git/index' to exist\n    at Function.assert.pathExists (node_modules/chai-fs/lib/assertions/path.js:31:35)\n    at Context.it (test/index-test.js:27:19)"
+      }
+    },
+    {
+      "title": "has at least one commit",
+      "fullTitle": "the local repository has at least one commit",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "message": "no commits were found.  Use \"git commit -m\" followed by a message to create a commit: value: expected './my-repository/.git/logs' to exist",
+        "showDiff": false,
+        "actual": "./my-repository/.git/logs",
+        "stack": "AssertionError: no commits were found.  Use \"git commit -m\" followed by a message to create a commit: value: expected './my-repository/.git/logs' to exist\n    at Function.<anonymous> (node_modules/chai-fs/lib/assertions/directory.js:21:53)\n    at Function.ctx.(anonymous function) [as directory] (node_modules/chai/lib/chai/utils/addMethod.js:41:25)\n    at Function.assert.isDirectory (node_modules/chai-fs/lib/assertions/directory.js:34:35)\n    at Context.it (test/index-test.js:31:19)"
+      }
+    },
     {
       "title": "has been pushed up to the remote repository",
       "fullTitle": "the local repository has been pushed up to the remote repository",
@@ -82,29 +133,8 @@
       "err": {}
     },
     {
-      "title": "has a valid git repository initialized for the my-repository folder",
-      "fullTitle": "this lab has a valid git repository initialized for the my-repository folder",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
       "title": "has a README.md file in the my-repository folder",
       "fullTitle": "this lab has a README.md file in the my-repository folder",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "has README.md as a tracked file",
-      "fullTitle": "the local repository has README.md as a tracked file",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "has at least one commit",
-      "fullTitle": "the local repository has at least one commit",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
